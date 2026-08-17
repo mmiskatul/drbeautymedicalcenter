@@ -90,11 +90,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Dr Beauty Medical Center is a medical and beauty clinic in Jumeirah, Dubai, next to Mercato Shopping Mall.",
+          "Dr Beauty Medical Center is a medical and beauty clinic in Jumeirah, Dubai, next to Mercato Shopping Mall. Request a consultation or call +971 4 595 2444.",
       },
       { property: "og:site_name", content: CLINIC.name },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Dr Beauty Medical Center | Medical & Beauty Clinic in Dubai" },
+      { name: "twitter:title", content: "Dr Beauty Medical Center | Medical & Beauty Clinic in Dubai" },
+      { property: "og:description", content: "Dr Beauty Medical Center is a medical and beauty clinic in Jumeirah, Dubai, next to Mercato Shopping Mall. Request a consultation or call +971 4 595 2444." },
+      { name: "twitter:description", content: "Dr Beauty Medical Center is a medical and beauty clinic in Jumeirah, Dubai, next to Mercato Shopping Mall. Request a consultation or call +971 4 595 2444." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d79f200bf7851238fcfce58d11b1fdbd/id-preview-75ddf793--03771c80-13ac-4858-92c9-d72c9b0ccc6e.lovable.app-1786965066901.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d79f200bf7851238fcfce58d11b1fdbd/id-preview-75ddf793--03771c80-13ac-4858-92c9-d72c9b0ccc6e.lovable.app-1786965066901.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -104,7 +110,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
     scripts: [
       {
