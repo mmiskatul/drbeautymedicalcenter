@@ -30,6 +30,8 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [active, close, step]);
 
+  const activeItem = active === null ? null : items[active];
+
   return (
     <>
       <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -57,23 +59,23 @@ export function GalleryGrid({ items }: { items: GalleryItem[] }) {
         ))}
       </ul>
 
-      {active !== null ? (
+      {activeItem ? (
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={items[active].caption}
+          aria-label={activeItem.caption}
           className="fixed inset-0 z-100 flex items-center justify-center bg-foreground/70 p-4 backdrop-blur-sm"
           onClick={close}
         >
           <div className="relative w-full max-w-4xl" onClick={(event) => event.stopPropagation()}>
             <img
-              src={items[active].src}
-              alt={items[active].alt}
-              width={items[active].width}
-              height={items[active].height}
+              src={activeItem.src}
+              alt={activeItem.alt}
+              width={activeItem.width}
+              height={activeItem.height}
               className="max-h-[80vh] w-full rounded-2xl bg-background object-contain"
             />
-            <p className="mt-3 text-center text-sm text-background">{items[active].caption}</p>
+            <p className="mt-3 text-center text-sm text-background">{activeItem.caption}</p>
             <div className="absolute inset-x-0 top-1/2 flex -translate-y-1/2 justify-between px-2">
               <Button
                 variant="secondary"
