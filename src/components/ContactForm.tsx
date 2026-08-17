@@ -112,9 +112,9 @@ export function Field({
 }: {
   id: string;
   label: string;
-  error?: string;
-  optional?: boolean;
-  className?: string;
+  error?: string | undefined;
+  optional?: boolean | undefined;
+  className?: string | undefined;
   children: React.ReactNode;
 }) {
   return (
